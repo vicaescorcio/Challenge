@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  
+   before_action :logged_in_user, only: [:edit, :update]
+   before_action :correct_user,   only: [:edit, :update]
   def new
   	@user = User.new
   end
@@ -20,11 +21,36 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
   private
 
     def user_params
       params.require(:user).permit(:name, :email, :register, :password,
                                    :password_confirmation)
+    end
+    def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = "Perfil atualizado!"
+      redirect_to @user
+
+      # Handle a successful update.
+    else
+      render 'edit'
+    end
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
+    end
+  end
+
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Faça o login in antes."
+        redirect_to login_url
+      end
     end
 
 end
