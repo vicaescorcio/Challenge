@@ -1,0 +1,7 @@
+<li id="solicitation-<%= solicitation.id %>">
+  <img id="logo" src="http://almamissionaria.com.br/wp-content/uploads/2016/05/form.png">
+  <span class="user"><%= %></span>
+  <span class="timestamp">
+    Solicitada <%= time_ago_in_words(solicitation.created_at) %> 
+  </span>
+</li>

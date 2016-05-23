@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+     @solicitation = current_user.solicitations.build
+     @solicitations = @user.solicitations
   end
 
   def create

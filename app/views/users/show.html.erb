@@ -10,4 +10,24 @@
       </h1>
     </section>
   </aside>
+    <div class="col-md-8">
+    <% if @user.solicitations.any? %>
+      <h3>Solicitações (<%= @user.solicitations.count %>)</h3>
+      <ol class="solicitations">
+        <%= render @solicitations %>
+      </ol>
+    <% end %>
+  </div>
 </div>
+
+<div class="row"
+
+
+>
+    <aside class="col-md-4">
+     
+     
+        <%= render 'shared/solicitation_form' %>
+      
+   
+  </div>
