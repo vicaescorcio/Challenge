@@ -8,13 +8,21 @@ class SolicitationsController < ApplicationController
 	 	@solicitation = current_user.solicitations.build
     if @solicitation.save
       flash[:success] = "Solicitação criada!"
-      redirect_to root_url
+      redirect_to root_url 
     else
       render 'static_pages/home'
     end
 	 	end
 
 	 def destroy
-	 	
+	 	   @solicitation = current_user.solicitations.find_by(id: params[:id])
+     
+	 
+	 	 @solicitation.destroy
+         flash[:success] = "Solicitação deletada"
+         redirect_to root_url 
+    
 	 end
+
+	
 end
