@@ -17,7 +17,9 @@
 
     <%= f.label :note, 'Nota' %>
     <%= f.text_field :note, class: 'form-control' %>
+</div>
 
-  <%= f.submit "pedir", class: "btn btn-primary" %>
-  </div>
+
+  <%= f.submit "Solicitar", class: "btn btn-primary", data: {confirm: "tem certeza?"} %>
+  
 <% end %>

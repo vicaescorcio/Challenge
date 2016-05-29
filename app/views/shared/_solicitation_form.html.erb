@@ -1,5 +1,5 @@
 <%= form_for(@solicitation) do |f| %>
  
   
-  <%= f.submit "Solicitar declaração de matrícula", class: "btn btn-primary" %>
+  <%= f.submit "Solicitar declaração de matrícula", class: "btn btn-primary", data: {confirm: "tem certeza que deseja solicitar matrícula?"} %>
 <% end %>
