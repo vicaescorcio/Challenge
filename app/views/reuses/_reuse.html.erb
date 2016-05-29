@@ -1,0 +1,12 @@
+<li id="reuse-<%= reuse.id %>">
+  <img id="logo" src="http://almamissionaria.com.br/wp-content/uploads/2016/05/form.png">
+  <span class="user"><%= reuse.user %></span>
+  <span class="content"><%= reuse.name1 %></span>
+  <span class="content"><%= reuse.note %></span>
+  <span class= "content"><%= reuse.name2%></span>  
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(reuse.created_at) %> ago.
+  </span>
+   <%= link_to "delete", reuse, method: :delete,
+                                       data: { confirm: "Tem certeza?" } %>
+</li>

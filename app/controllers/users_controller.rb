@@ -9,6 +9,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
      @solicitation = current_user.solicitations.build
      @solicitations = @user.solicitations
+     @reuse = current_user.reuses.build
+     @reuses = @user.reuses
   end
 
   def create

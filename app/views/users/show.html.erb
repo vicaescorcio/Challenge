@@ -1,6 +1,8 @@
 
 
 <% provide(:title, @user.name) %>
+
+
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
@@ -19,11 +21,17 @@
     <% end %>
   </div>
 </div>
+<div class="col-md-8">
+    <% if @user.reuses.any? %>
+      <h3>Aproveitamentos (<%= @user.reuses.count %>)</h3>
+      <ol class="solicitations">
+        <%= render @reuses %>
+      </ol>
+    <% end %>
+  </div>
+</div>
 
-<div class="row"
-
-
->
+<div class="row">
     <aside class="col-md-4">
      
      
@@ -31,3 +39,13 @@
       
    
   </div>
+
+  <div class="row">
+    <aside class="col-md-4">
+     
+     
+        <%= render 'shared/reuse_form' %>
+      
+   
+  </div>
+

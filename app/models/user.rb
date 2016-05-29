@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 	  attr_accessor :remember_token
     has_many :solicitations, dependent: :destroy
+    has_many :reuses, dependent: :destroy
+    
 
   
  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i

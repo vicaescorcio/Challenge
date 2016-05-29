@@ -8,7 +8,7 @@ class SolicitationsController < ApplicationController
 	 	@solicitation = current_user.solicitations.build
     if @solicitation.save
       flash[:success] = "Solicitação criada!"
-      redirect_to root_url 
+      redirect_to @current_user 
     else
       render 'static_pages/home'
     end
@@ -20,7 +20,7 @@ class SolicitationsController < ApplicationController
 	 
 	 	 @solicitation.destroy
          flash[:success] = "Solicitação deletada"
-         redirect_to root_url 
+         redirect_to @current_user
     
 	 end
 

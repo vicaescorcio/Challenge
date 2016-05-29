@@ -1,0 +1,23 @@
+<%= form_for(@reuse) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+   <div class="field">
+    <%= f.label :name1, 'Nome da cadeira' %>
+    <%= f.text_field :name1, class: 'form-control' %>
+
+
+    <%= f.label :name2, 'Nome da cadeira a ser aproveitada' %>
+    <%= f.text_field :name2, class: 'form-control' %>
+       
+    <%= f.label :cod1, 'Código 1' %>
+    <%= f.text_field :cod1, class: 'form-control' %>
+  
+
+    <%= f.label :cod2, 'Código 2' %>
+    <%= f.text_field :cod2, class: 'form-control' %>
+
+    <%= f.label :note, 'Nota' %>
+    <%= f.text_field :note, class: 'form-control' %>
+
+  <%= f.submit "pedir", class: "btn btn-primary" %>
+  </div>
+<% end %>
